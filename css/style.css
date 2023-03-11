@@ -1,0 +1,181 @@
+/* Reset styles */
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+/* Global styles */
+body {
+	font-family: Arial, sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
+	color: #333;
+	background-color: #f0f0f0;
+}
+
+a {
+	color: #333;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+header {
+	background-color: #3c284a;
+}
+
+nav {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 20px;
+}
+
+
+.logo {
+	margin-right: 30px;
+}
+
+.logo img {
+	max-height: 60px;
+}
+
+.nav-links {
+	margin-right: auto;
+}
+
+.nav-links ul {
+	display: flex;
+	list-style: none;
+}
+
+.nav-links li {
+	margin-right: 30px;
+}
+
+.nav-links a {
+	font-size: 18px;
+	font-weight: bold;
+	color: #fff;
+	transition: color 0.2s ease-in-out;
+}
+
+.nav-links a:hover {
+	color: #fff;
+}
+
+.nav-buttons a {
+	display: inline-block;
+	padding: 10px 20px;
+	margin-left: 20px;
+	background-color: #fff;
+	color: #3f3e68;
+	border-radius: 5px;
+	font-weight: bold;
+	transition: background-color 0.2s ease-in-out;
+}
+
+.nav-buttons a:hover {
+	background-color: #3c284a;
+	color: #fff;
+}
+
+main {
+	padding: 40px;
+}
+
+.hero {
+	background-color: #3c284a;
+	color: #fff;
+	text-align: center;
+	padding: 80px 0;
+}
+
+.hero h1 {
+	font-size: 48px;
+	margin-bottom: 20px;
+}
+
+.hero p {
+	font-size: 20px;
+	margin-bottom: 40px;
+}
+
+.cta-button {
+	display: inline-block;
+	padding: 10px 20px;
+	background-color: #fff;
+	color: #3f3e68;
+	border-radius: 5px;
+	font-weight: bold;
+	transition: background-color 0.2s ease-in-out;
+}
+
+.cta-button:hover {
+	background-color: #3f3e68;
+	color: #fff;
+}
+
+.features {
+	
+	align-items: center;
+
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin-top: 80px;
+}
+
+.features h2 {
+	font-size: 32px;
+	margin-bottom: 40px;
+}
+
+.feature {
+	display : flex;
+	flex-direction: row;
+	margin-top: 50px;
+	flex-basis: 30%;
+	padding: 20px;
+	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.feature .icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 40px;
+}
+
+.feature .icon img {
+	max-height: 100%;
+	max-width: 100%;
+}
+
+.feature h3 {
+	font-size: 24px;
+	margin-bottom: 20px;
+	margin-left: 20px;
+}
+
+.feature p {
+	font-size: 18px;
+	line-height: 1.5;
+	margin-left: 20px;
+}
+
+footer {
+	background-color: #3c284a;
+	color: #fff;
+	text-align: center;
+	padding: 20px;
+}
+
+footer p {
+	font-size: 14px;
+}
+

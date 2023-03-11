@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Schoodle Sign Up</title>
+	<link rel="stylesheet" href="css/signup.css">
+</head>
+<body>
+	<div class="container">
+		<div class="left">
+			<div class="header">
+				<h2 class="animation a1">Let's get you started!</h2>
+				<h4 class="animation a2">Sign up for an account</h4>
+			</div>
+			<div >
+				<form class="form" action="signup.php" method="post" onsubmit="return validateForm()">
+                    <input class="form-field animation a3" type="text" id="firstname" name="firstname" placeholder="First Name">
+                    <input class="form-field animation a3" type="text" id="lastname" name="lastname" placeholder="Last Name">
+                    <input class="form-field animation a3" type="text" id="email" name="email" placeholder="Email">
+                    <input class="form-field animation a3" type="text" id="phone" name="phone" placeholder="Phone">
+					<input class="form-field animation a3" type="text" id="username" name="username" placeholder="Username">
+					<input class="form-field animation a4" type="password" id="password" name="password" placeholder="Password">
+					<input class="form-field animation a5" type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password">
+					<div id="message"></div>
+					<input class ="form-field animation a5" type="submit" name="submit" value="SIGN UP" >
+					<p class="animation a5">Already have an account? <a href="login.html">Sign In</a>
+				</form>
+                <a class="form-field animation a5" href="index.html">Back to Homepage</a>
+			</div>
+		</div>
+		<div class="right"></div>
+	</div>
+	<script>
+        function validateForm() {
+            var firstname = document.getElementById("firstname").value;
+            var lastname = document.getElementById("lastname").value;
+            var email = document.getElementById("email").value;
+            var phone = document.getElementById("phone").value;
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirmPassword").value;
+            var message = document.getElementById("message");
+
+            if (firstname === "" || username === "" || password === "" || confirmPassword === "" || lastname === "" || email === "" || phone === "") {
+                message.innerHTML = "Please fill out all fields.";
+                message.style.display = "block";
+                message.style.color = "red";
+                return false;
+            }
+
+            if (password !== confirmPassword) {
+                message.innerHTML = "Passwords do not match.";
+                message.style.display = "block";
+                message.style.color = "red";
+                return false;
+            }
+
+            const form = document.querySelector('.form');
+            const formData = new FormData(form);
+
+            fetch('signup.php', {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => response.text())
+                .then(data => {
+                message.innerHTML = data;
+                message.style.display = "block";
+                message.style.color = "green";
+            })
+                .catch(error => {
+                message.innerHTML = "An error occurred.";
+                message.style.display = "block";
+                message.style.color = "red";
+                console.error(error);
+            });
+
+            return false;
+        }
+    </script>
+
+    </body>
+</html>

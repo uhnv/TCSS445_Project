@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>About Husky Market</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/about.css">
+</head>
+<body>
+	<header>
+		<nav>
+			<div class="logo">
+				<a href="index.html"><img src="img/huskylogo.png" alt="Husky Market"></a>
+			</div>
+			<div class="nav-links">
+				<ul>
+                    <li><a href="product.php">Products</a></li>
+                    <li><a href="orders.php">Orders</a></li>
+                    <li><a href="about.html" inactive>About</a></li>
+                    <li><a href="review_Admin.php">Custormer Infor</a></li>
+                    <li><a href="history_Order.php">History Order</a></li>
+                    <li><a href="inventory.php">Inventory</a></li>
+                    <li><a href="track_shipping.php">Shipping</a></li>
+				</ul>
+			</div>
+			<div class="nav-buttons" id="nav-buttons">
+                <a href="cart.php" id="cart-button">
+                    <img src="img/cart-icon.png" alt="Cart" width="20" height="20">
+                </a>
+				<a href="login.html" class="sign-in" id="button1">Sign in</a>
+				<a href="signup.html" class="sign-up" id="button2">Sign up</a>
+				<a href="#" style="display:none;" id="manage-button">Manage Account</a>
+				<a href="#" id="logout-button" style="display:none;">Log Out</a>
+			</div>
+		</nav>
+	</header>
+	<main>
+		<section class="about-us">
+			<h2>About Us</h2>
+			<p>Here at Husky Market, we strive to provide an easy and efficient platform for students to buy and sell school supplies. Our goal is to create a community where students can connect and help each other out, while also getting great deals on the items they need.</p>
+			<h3>Our Team</h3>
+            <p>Meet the team behind Husky Market! We are a group of Computer Science seniors at University of Washington - Tacoma. Three of us are Vietnamese and one is from Belarus. We share a passion for creating innovative solutions that make a positive impact on people's lives.</p>
+			<div class="team-member">
+				<h4>An Nguyen</h4>
+				<h4>Tommy Diep</h4>
+				<h4>Uladzimir Hanevich</h4>
+				<h4>Aaron Tran</h4>
+            </div>
+            <h3>Our Goals</h3>
+            <ul>
+                <li><strong>Provide a Convenient Platform:</strong> Our goal is to provide an easy and efficient platform for students to buy school supplies.</li>
+			    <li><strong>Create a Community:</strong> We strive to create a community where students can connect and help each other out, fostering a positive and supportive environment.</li>
+                <li><strong>Improve Student Life:</strong> Our platform aims to make student life easier by providing a one-stop-shop for buying school supplies.</li>
+                <li><strong>Provide a Safe Environment:</strong> We want to ensure the safety of our users by implementing secure login and payment systems.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Husky Market. All rights reserved.</p>
+    </footer>
+    
+
+
+    <script>
+        // Check if the user is logged in        // Set the session storage item to false if it hasn't been set yet
+        if (!sessionStorage.getItem("loggedIn")) {
+            sessionStorage.setItem("loggedIn", "false");
+        }
+
+        if (sessionStorage.getItem("loggedIn") === "true") {
+            // User is logged in, show the user management icon
+            document.getElementById("button1").style.display = "none";
+            document.getElementById("button2").style.display = "none";
+            document.getElementById('manage-button').style.display = 'inline-block';
+            document.getElementById('logout-button').style.display = 'inline-block';
+
+        }
+
+
+        const logoutLink = document.getElementById('logout-button');
+
+        logoutLink.addEventListener('click', () => {
+            sessionStorage.removeItem('loggedIn');
+            window.location.href = 'index.html';
+        });
+
+    </script>
+    </body>
+</html>

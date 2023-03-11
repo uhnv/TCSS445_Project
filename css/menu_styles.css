@@ -1,0 +1,50 @@
+@charset "utf-8";
+
+.img_table {
+    display: flex;
+    width: 100%;
+}
+
+.img_cell {
+    flex-grow: 1;
+}
+
+div.content {
+    /* float: left; */
+    width: 75%;
+    flex-grow: 1;
+}
+/* 7 */
+div.content:first-child{
+    background-color: white;
+    padding: 10px 20px 0px 20px;
+}
+
+/* style for h2,h3 */
+div.row  div.content  h2{
+    color: forestgreen;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5em;
+}
+section h3{
+    color: rgba(223, 54, 54, 0.788);
+    font-weight: bold;
+    font-size: 1.7em;
+}
+/* style for address */
+section div#addr address {
+    padding: 10px;
+    border: 5px solid rgb(126, 122, 122);
+    margin: 10px;
+    overflow: auto;
+}
+section div#addr address img{
+    float: right;
+    overflow: auto;
+}
+
+.row {
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+}
